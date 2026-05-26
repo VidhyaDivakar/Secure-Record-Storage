@@ -17,6 +17,7 @@ const Book = require("./models/users");
 const User = require("./models/users");
 
 const Note = require("./models/Note");
+const noteRoutes = require("./routes/noteRoutes");
 
 const PORT = 3006;
 // middleware
@@ -136,93 +137,11 @@ router.get("/me", authMiddleware, async (req, res) => {
 
 });
 
-// Create note route
-router.post("/", async (req, res) => {
-    const note = await Note.create({
-        title: req.body.title,
-        content: req.body.content,
-        user: req.user._id
-    });
-
-})
-// get all the nodes
-router.get("/", authMiddleware, async (req, res) => {
-
-    const notes = await Note.find({
-        user: req.user._id
-    });
-
-    res.json(notes);
-});
-// update Note to check ownership
-
-router.put("/:id", authMiddleware, async (req, res) => {
-
-    const note = await Note.findById(req.params.id);
-
-    if (!note) {
-        return res.status(404).json({ message: "Note not found" });
-    }
-
-    // ownership check
-    if (note.user.toString() !== req.user._id) {
-        return res.status(403).json({
-            message: "User is not authorized to update this note"
-        });
-    }
-
-    const updatedNote = await Note.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        { new: true }
-    );
-
-    res.json(updatedNote);
-});
-
-// detele note with ownership check
-
-router.delete("/:id", authMiddleware, async (req, res) => {
-
-    const note = await Note.findById(req.params.id);
-
-    if (!note) {
-        return res.status(404).json({ message: "Note not found" });
-    }
-
-    if (note.user.toString() !== req.user._id) {
-        return res.status(403).json({
-            message: "User is not authorized to delete this note"
-        });
-    }
-
-    await Note.findByIdAndDelete(req.params.id);
-
-    res.json({ message: "Note deleted successfully" });
-});
-
-// getting single note
-
-router.get("/:id", authMiddleware, async (req, res) => {
-
-    const note = await Note.findById(req.params.id);
-
-    if (!note) {
-        return res.status(404).json({ message: "Note not found" });
-    }
-
-    if (note.user.toString() !== req.user._id) {
-        return res.status(403).json({
-            message: "User is not authorized to view this note"
-        });
-    }
-
-    res.json(note);
-});
-
-
 //connects router to the Express app AND sets a base URL ("/api/users" (prefix)) for all routes inside that router.
 app.use("/api/users", router)
+
+
+app.use("/api/notes", noteRoutes);
 //port
 
 app.listen(PORT, () => {
