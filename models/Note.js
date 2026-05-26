@@ -16,3 +16,4 @@ user: {
 }
 
 });
+module.exports = mongoose.model("Note", noteSchema);

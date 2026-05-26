@@ -17,6 +17,7 @@ router.post("/", authMiddleware, async (req, res) => {
         res.status(201).json(note);
 
     } catch (error) {
+          console.log("FULL ERROR:", error);
         res.status(500).json({ message: "Server Error" });
     }
 });
