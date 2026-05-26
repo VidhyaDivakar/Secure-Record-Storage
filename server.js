@@ -15,7 +15,7 @@ const jwt = require("jsonwebtoken");
 const { authMiddleware } = require("./utils/auth");
 const Book = require("./models/users");
 const User = require("./models/users");
-const PORT = 3004;
+const PORT = 3006;
 
 
 // middleware
@@ -134,6 +134,16 @@ router.get("/me", authMiddleware, async (req, res) => {
    } 
 
 });
+
+// Create note route
+router.post("/", async (req, res) =>{
+    const note = await Note.create({
+        title: req.body.title,
+        content: req.body.content,
+        user: req.user._id
+    });
+
+})
 
 //connects router to the Express app AND sets a base URL ("/api/users" (prefix)) for all routes inside that router.
 app.use("/api/users", router)
