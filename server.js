@@ -68,7 +68,7 @@ router.post("/register", async (req, res) => {
 
 // route/endpoint login
 
-app.post("/api/users/login", async (req, res) => {
+router.post("/api/users/login", async (req, res) => {
 
     try {
 

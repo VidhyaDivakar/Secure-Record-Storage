@@ -99,3 +99,56 @@ login http://localhost:3006/api/users/login
     "email": "nir123@gmail.com"
   }
 }
+
+
+{
+  "username": "greenvile"
+  "email": "greenvile@gmail.com"
+  "password": 12344321
+}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE1YTIyNzIzMTMwMjNmZmVlY2ExMjciLCJ1c2VybmFtZSI6ImdyZWVudmlsZSIsImlhdCI6MTc3OTgwMjk5NCwiZXhwIjoxNzc5ODA2NTk0fQ.hwDkVTAw0OytzRxHrIg7LnfljpxbWh5TOVUUfJhbvWU
+
+{
+  "username": "jimmy",
+  "email": "jimmy@gmail.com",
+  "password": 123454321
+}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE1YTI1ZTIzMTMwMjNmZmVlY2ExMjgiLCJ1c2VybmFtZSI6ImppbW15IiwiaWF0IjoxNzc5ODAzMDc1LCJleHAiOjE3Nzk4MDY2NzV9.joC4-9oiinyJVIcPc7_iGdW1iO36pn6oV_up_Z_J6QU
+
+to fetch single note
+
+http://localhost:3006/api/notes/6a15a5062313023ffeeca12a
+
+
+{
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE1YTI1ZTIzMTMwMjNmZmVlY2ExMjgiLCJ1c2VybmFtZSI6ImppbW15IiwiaWF0IjoxNzc5ODA5MDg5LCJleHAiOjE3Nzk4MTI2ODl9.GeUO8TBFEGLLpI87pkxy4gwz0OivqQXDMhj0KMCUzdg",
+  "user": {
+    "_id": "6a15a25e2313023ffeeca128",
+    "username": "jimmy",
+    "email": "jimmy@gmail.com"
+  }
+}
+
+
+{
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE1YTI1ZTIzMTMwMjNmZmVlY2ExMjgiLCJ1c2VybmFtZSI6ImppbW15IiwiaWF0IjoxNzc5ODA5Mjk2LCJleHAiOjE3Nzk4MTI4OTZ9.WsTgutOK1BOkoep0PMFbPJFHHd2pB_Wy4AdjTH4dpQA",
+  "user": {
+    "_id": "6a15a25e2313023ffeeca128",
+    "username": "jimmy",
+    "email": "jimmy@gmail.com"
+  }
+}
+
+{
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE1YTIyNzIzMTMwMjNmZmVlY2ExMjciLCJ1c2VybmFtZSI6ImdyZWVudmlsZSIsImlhdCI6MTc3OTgwOTMzNywiZXhwIjoxNzc5ODEyOTM3fQ.P_heLvvVd2Iks98gJc899q_XNj29q4V-SKYyckD7HZI",
+  "user": {
+    "_id": "6a15a2272313023ffeeca127",
+    "username": "greenvile",
+    "email": "greenvile@gmail.com"
+  }
+}
