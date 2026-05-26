@@ -64,3 +64,16 @@ Time: **86 ms**
   "email": "nir123@gmail.com",
   "__v": 0
 }
+
+
+http://localhost:3006/api/users/me
+
+in headers: Authorization: Beaerer and same token as above
+
+
+{
+  "_id": "6a1505c339bb5b6f09cc2c6c",
+  "username": "nir",
+  "email": "nir123@gmail.com",
+  "__v": 0
+}

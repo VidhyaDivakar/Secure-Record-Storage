@@ -15,9 +15,10 @@ const jwt = require("jsonwebtoken");
 const { authMiddleware } = require("./utils/auth");
 const Book = require("./models/users");
 const User = require("./models/users");
+
+const Note = require("./models/Note");
+
 const PORT = 3006;
-
-
 // middleware
 app.use(express.json());
 
@@ -123,20 +124,20 @@ app.post("/api/users/login", async (req, res) => {
 
 router.get("/me", authMiddleware, async (req, res) => {
     try {
-    const user = await User.findById(req.user._id)
-    .select("-password"); //The minus sign means exclude.
-    res.json(user);
+        const user = await User.findById(req.user._id)
+            .select("-password"); //The minus sign means exclude.
+        res.json(user);
     }
-   catch (error) {
-    res.status (500). json({
-        message: "Server Error"
-    });
-   } 
+    catch (error) {
+        res.status(500).json({
+            message: "Server Error"
+        });
+    }
 
 });
 
 // Create note route
-router.post("/", async (req, res) =>{
+router.post("/", async (req, res) => {
     const note = await Note.create({
         title: req.body.title,
         content: req.body.content,
