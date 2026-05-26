@@ -43,3 +43,24 @@ http://localhost:3006/api/users/login
     "email": "nir123@gmail.com"
   }
 }
+
+
+http://localhost:3006/api/users/me
+
+in Headers:
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTE1MDVjMzM5YmI1YjZmMDljYzJjNmMiLCJ1c2VybmFtZSI6Im5pciIsImlhdCI6MTc3OTc2Mjg4MywiZXhwIjoxNzc5NzY2NDgzfQ.sg_qHV1uUBX3bxPVbEMQrNhu_9gL-rv8rq3tiFNITJA
+
+
+Status: **200 OK**
+
+Size: **86 Bytes**
+
+Time: **86 ms**
+
+{
+  "_id": "6a1505c339bb5b6f09cc2c6c",
+  "username": "nir",
+  "email": "nir123@gmail.com",
+  "__v": 0
+}
